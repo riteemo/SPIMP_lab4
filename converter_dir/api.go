@@ -10,10 +10,10 @@ import (
 const apiBaseURL = "https://v6.exchangerate-api.com/v6"
 
 type APIResponse struct {
-    Result          string             
-    BaseCode        string             
-    ConversionRates map[string]float64 
-    ErrorType       string             
+    Result          string             `json:"result"`
+    BaseCode        string             `json:"base_code"`
+    ConversionRates map[string]float64 `json:"conversion_rates"`
+    ErrorType       string             `json:"error-type"`
 }
 
 func FetchRates(apiKey, baseCurrency string) (map[string]float64, error) {
